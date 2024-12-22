@@ -3,8 +3,8 @@ import { useLocation } from 'react-router-dom';
 
 function Resultado() {
     const { state } = useLocation();
+    console.log(state);
     const { nome, idade, endereco, corPreferida } = state || {};
-
     return (
         <div style={{ padding: '20px', backgroundColor: corPreferida || 'white', color: 'black' }}>
             <h1>Dados do Usuário</h1>

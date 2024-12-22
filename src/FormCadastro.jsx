@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, } from 'react-router-dom';
+import './FormCadastro.css';
 
 function FormCadastro() {
     const [nome, setNome] = useState('');
@@ -27,6 +28,7 @@ function FormCadastro() {
         try {
             const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
             const { uf, localidade, bairro, logradouro } = response.data;
+            
             setEndereco({ estado: uf, cidade: localidade, bairro, rua: logradouro });
         } catch {
             setErro('CEP inválido.');
@@ -44,13 +46,17 @@ function FormCadastro() {
             return;
         }
         setErro('');
+        const idade_age = 10;
         const idade = calcularIdade(dataNascimento);
+
+        console.log(corPreferida);
 
         // Redirecionar para a próxima página com os dados
         navigate('/resultado', { state: { nome, idade, endereco, corPreferida } });
     };
 
     return (
+        
         <form onSubmit={handleSubmit}>
             <div>
                 <label>Nome Completo:</label>
@@ -91,10 +97,11 @@ function FormCadastro() {
             <div>
                 <label>Cor Preferida:</label>
                 <select value={corPreferida} onChange={(e) => setCorPreferida(e.target.value)}>
-                    <option value="azul">Azul</option>
-                    <option value="vermelho">Vermelho</option>
-                    <option value="verde">Verde</option>
-                    <option value="amarelo">Amarelo</option>
+                    <option value="">Selecione...</option>
+                    <option value="#ff3333">Vermelho</option>
+                    <option value="green">Verde</option>
+                    <option value="yellow">Amarelo</option>
+                    <option value="#0000FF">Azul</option>
                 </select>
             </div>
             {erro && <p style={{ color: 'red' }}>{erro}</p>}
