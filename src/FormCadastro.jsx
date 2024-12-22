@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate, } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './FormCadastro.css';
 
 function FormCadastro() {
@@ -46,7 +46,6 @@ function FormCadastro() {
             return;
         }
         setErro('');
-        const idade_age = 10;
         const idade = calcularIdade(dataNascimento);
 
         console.log(corPreferida);
@@ -56,7 +55,6 @@ function FormCadastro() {
     };
 
     return (
-        
         <form onSubmit={handleSubmit}>
             <div>
                 <label>Nome Completo:</label>
@@ -94,15 +92,14 @@ function FormCadastro() {
                     <p>Rua: {endereco.rua}</p>
                 </div>
             )}
-            <div>
-                <label>Cor Preferida:</label>
-                <select value={corPreferida} onChange={(e) => setCorPreferida(e.target.value)}>
-                    <option value="">Selecione...</option>
-                    <option value="#ff3333">Vermelho</option>
-                    <option value="green">Verde</option>
-                    <option value="yellow">Amarelo</option>
-                    <option value="#0000FF">Azul</option>
-                </select>
+            <div className="seletor-de-cores">
+                <label>Escolha sua cor preferida:</label>
+                <input
+                    type="color"
+                    value={corPreferida}
+                    onChange={(e) => setCorPreferida(e.target.value)}
+                    required
+                />
             </div>
             {erro && <p style={{ color: 'red' }}>{erro}</p>}
             <button type="submit">Salvar</button>
