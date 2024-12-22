@@ -76,7 +76,7 @@ p[style="color: red;"] {
 
 .resultado-container {
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #800080;
     border-radius: 10px;
     background-color: #fff;
     max-width: 600px;
@@ -84,6 +84,7 @@ p[style="color: red;"] {
     margin: 20px auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: #000000;
+    
 }
 
 .resultado-container h1 {
@@ -105,7 +106,7 @@ p[style="color: red;"] {
 .footer {
     margin-top: 10px;
     padding-top: 10px;
-    border-top: 1px solid #f1ecec;
+    border-top: 1px solid #800080;
     text-align: center;
     font-size: 14px;
     color: rgb(0, 0, 0);
