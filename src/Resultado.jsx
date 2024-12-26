@@ -18,7 +18,7 @@ function Resultado() {
                 <li><strong>Bairro:</strong> {endereco?.bairro}</li>
                 <li><strong>Rua:</strong> {endereco?.rua}</li>
             </ul>
-            <p><strong>Cor Preferida:</strong> {corPreferida}</p>
+            
             <footer className="footer">
                 Development by Jordan Albuquerque
             </footer>

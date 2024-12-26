@@ -56,6 +56,7 @@ function FormCadastro() {
 
     return (
         <form onSubmit={handleSubmit}>
+            <h1 className='h1'> FORMULÁRIO DE CADASTRO </h1>
             <div>
                 <label>Nome Completo:</label>
                 <input
