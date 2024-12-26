@@ -27,3 +27,6 @@ const hexToColorName = (hex) => {
 
 
     <p><strong>Cor Preferida:</strong> {hexToColorName(corPreferida)}</p>
+
+
+    //att 26/12/24
