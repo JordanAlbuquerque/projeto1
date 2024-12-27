@@ -50,7 +50,7 @@ function FormCadastro() {
 
         console.log(corPreferida);
 
-        // Redirecionar para a próxima página com os dados
+    
         navigate('/resultado', { state: { nome, idade, endereco, corPreferida } });
     };
 

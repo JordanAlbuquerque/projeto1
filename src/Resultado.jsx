@@ -20,7 +20,7 @@ function Resultado() {
             </ul>
             
             <footer className="footer">
-                Development by Jordan Albuquerque
+             Developed by Jordan Albuquerque
             </footer>
         </div>
     );
